@@ -1,0 +1,56 @@
+/* regi.css */
+
+/* .container {
+   height: 65vh;
+   width: 25%;
+   border: 1px solid;
+   position: relative;
+
+ } */
+
+ 
+/*  
+ .main1 {
+   
+   background-image: url(./5559852.jpg);
+   background-size: cover;
+   height: 100vh;   
+ }
+  */
+
+  body{
+   /* background-image: url(./5559852.jpg); */
+   background-size: cover;
+  }
+
+/* #container{
+ 
+ width: 28%;
+ height: 80vh;
+ background-color: aliceblue;
+ margin-left: 4%;
+ margin-top: 80px;
+
+ } */
+ 
+ /* .main1 {
+   background-color: #eb6666;
+   padding: 20px;
+   
+
+ } */
+ 
+ 
+  /* input,
+ select {
+   margin-bottom: 20px;
+    margin-left: 10%; 
+ }
+ 
+  button {
+   margin-top: 10px;
+ }
+  input{
+   border: 0px;
+   border-bottom: 2px solid #0095fa;
+  }  */
