@@ -17,23 +17,19 @@ const [data,setData]=useState([])
 const [username,setUsername]=useState("")
 const [password,setPassword]=useState("")
   const navigate=useNavigate()
-const handleSubmit=(e)=>{
-  e.preventDefault()
-  axios.get("http://localhost:3001/posts")
-
-  .then((res)=>{
-    const findUser = res.data.find(user => user.username === username)
-      if(findUser){
-         user.Signin()
-         navigate("/")
-      }else{
-        alert("please register")
-      }
-  }
-  ) 
-
- 
-}
+   const handleSubmit = (e) => {
+        e.preventDefault()
+        const storedData = JSON.parse(localStorage.getItem("userDetails")) || []
+        const findUser = storedData.find(user => user.username === username)
+        if (findUser && findUser.password === password) {
+          user.Signin()
+          navigate("/")
+        } else {
+            // setError("Please register first")
+            alert("please regisret")
+            navigate("/")
+        }
+    }
 const handleUsername=(e)=>{
 setUsername(e.target.value)
 

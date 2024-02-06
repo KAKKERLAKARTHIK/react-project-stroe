@@ -40,15 +40,11 @@ const RegistrationForm = () => {
             }
         
         
-   axios.post("http://localhost:3001/posts",userDetails)
-.then((res)=>{
-    console.log(res);
-    if (username.length!==0) {
-        navigate("/Login");
-      } else {
-        console.error("Registration failed");
-      }
-})
+            let storedData = JSON.parse(localStorage.getItem("userDetails")) || []
+            storedData.push(userDetails)
+            localStorage.setItem("userDetails", JSON.stringify(storedData))
+            navigate("/Login")
+
 
 
 
@@ -121,8 +117,8 @@ const RegistrationForm = () => {
     return (
        
         
-      <center> <div id="container">
- 
+      <center id="main"> <div id="container">
+ <div>
             <h2>Registration form</h2>
         <form onSubmit={handleClick}>
             {/* <label for="email">email:</label> */}
@@ -155,12 +151,13 @@ const RegistrationForm = () => {
                 <option >odisa</option>
                 <option>goa</option>
             </select>
-            <input type="submit"/>
+            <br></br>
+            <input type="submit" id="submit"/>
             <small style={{ color: "red" }}>{fill}</small><br />
             
         </form>
-        <button><Link to={"/Login"}>log in</Link></button>
-        
+        <button id="login"><Link to={"/Login"}>log in</Link></button>
+        </div>
         </div></center> 
       
         
